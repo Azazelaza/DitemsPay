@@ -1,0 +1,38 @@
+.details {
+    background: #f4f4f4;
+    box-shadow: 0px 0px 4px #ececec;
+    padding: 1.3rem 2rem; 
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    .icon {
+        width: 6%;
+        text-align: center;
+        border: 1px solid white;
+        background: white;
+        padding: 1rem 0.3rem;
+        border-radius: 2rem;
+        font-size: 1.3rem;
+        color: #6d6d6d;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .data {
+        width: 84%;
+        padding: 0 1.5rem;
+        margin: auto;
+        display: block;
+        p{
+            margin-bottom: 0;
+        }
+    }
+
+    .edit{
+        width: 10%;
+    }
+}

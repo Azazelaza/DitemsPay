@@ -1,0 +1,44 @@
+.data {
+    padding: 0 4rem;
+}
+
+.contain {
+    background-color: #004e7d;
+    color: #004e7d;
+    padding: 0rem 1rem;
+    height: 100vh;
+
+    .products {
+        margin-top: 2rem;
+        border-radius: 2rem;
+        display: flex;
+        background-color: white;
+        padding: 1rem 1.5rem;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+
+            .price {
+                margin-right: 1.5rem;
+            }
+
+            .quantity {
+                margin-left: 1rem;
+            }
+        }
+
+        img {
+            margin-right: 3rem;
+            display: block;
+            margin-left: auto;
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}

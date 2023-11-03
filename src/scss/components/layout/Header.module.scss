@@ -1,0 +1,8 @@
+.dropdown {
+    text-decoration: none !important;
+    color: black !important;
+
+    &::after {
+        display: none;
+    }
+}
