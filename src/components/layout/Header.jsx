@@ -5,8 +5,10 @@ import styles from "../../scss/components/layout/Header.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { startShowModal } from "../../redux/slices/modal/thunk";
 import { startLogOut } from "../../redux/slices/authSlice/thunk";
+import { useNavigate } from "react-router-dom";
 export default function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { username, status } = useSelector((state) => state.auth);
   return (
     <>
@@ -36,7 +38,7 @@ export default function Header() {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item>Perfil</Dropdown.Item>
+                    <Dropdown.Item onClick={() => navigate('/')}>Perfil</Dropdown.Item>
                     <Dropdown.Item onClick={() => dispatch(startLogOut())}>
                       Salir
                     </Dropdown.Item>

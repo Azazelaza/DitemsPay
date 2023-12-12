@@ -12,6 +12,7 @@ export const RouterApp = () => {
   const dispatch = useDispatch();
   const InfoContact = lazy(() => import("../pages/checkout/InfoContact"));
   const Address = lazy(() => import("../pages/checkout/Address"));
+  const Addresses = lazy(() => import("../pages/checkout/Addresses"));
   const Invoice = lazy(() => import("../pages/checkout/Invoice"));
   const Finally = lazy(() => import("../pages/checkout/Finally"));
   const Thanks = lazy(() => import("../pages/checkout/Thanks"));
@@ -40,6 +41,7 @@ export const RouterApp = () => {
                     {status == "auth" && (
                       <>
                         <Route path="/address" element={<Address />} />
+                        <Route path="/addresses" element={<Addresses />} />
                         <Route path="/invoice" element={<Invoice />} />
                         <Route path="/finally" element={<Finally />} />
                         <Route path="/thanks" element={<Thanks />} />
@@ -54,7 +56,7 @@ export const RouterApp = () => {
             path="/"
             element={
               <Suspense fallback={<Loading />}>
-                {status == "not-auth" ? <Home /> : <Panel />}
+                <Home />
               </Suspense>
             }
           />

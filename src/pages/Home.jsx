@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { startShowModal } from "../redux/slices/modal/thunk";
 import styles from "../scss/pages/home.module.scss";
 export default function Home() {
   const dispatch = useDispatch();
+  const { status, checking } = useSelector((state) => state.auth);
 
   return (
     <>
@@ -16,8 +17,14 @@ export default function Home() {
             className="cursor-pointer"
             onClick={() => dispatch(startShowModal("login"))}
           >
-            <span className={styles.underline}> Inicia sesión</span> para ver
-            el panel de usuario
+            {status == "auth" ? (
+              <>Revisa tu correo electronico para estar al tanto de tu pedido</>
+            ) : (
+              <>
+                <span className={styles.underline}> Inicia sesión</span> para
+                ver el panel de usuario
+              </>
+            )}
           </p>
           <p>O</p>
           <p>Realiza tu compra en</p>

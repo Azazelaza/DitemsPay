@@ -1,4 +1,5 @@
-const REQUEST_API_URL = "http://127.0.0.1:8000/api";
+//const REQUEST_API_URL = "http://127.0.0.1:8000/api";
+const REQUEST_API_URL = "https://api.hardcuino.com/api";
 export const Call = async (
     endpoint,
     method = "GET",
@@ -81,7 +82,7 @@ export const CallWithFormDataFile = async (
     body = null,
     signed = true
 ) => {
-    let url = `/api/${endpoint}`;
+    let url = `${REQUEST_API_URL}/${endpoint}`;
 
     const headers = new Headers({ Accept: "application/json" });
 
@@ -100,14 +101,10 @@ export const CallWithFormDataFile = async (
 
     const resp = await fetch(url, options);
 
-    if (resp.status !== 200) {
-        const result = await resp.json();
-        result.status_code = resp.status;
-        result.request_ok = resp.ok;
-        return result;
-    } else {
-        return await resp.blob();
-    }
+    const result = await resp.json();
+    result.status_code = resp.status;
+    result.request_ok = resp.ok;
+    return result; 
 };
 
 export const cleanEmpty = (data) => {

@@ -6,13 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { SelectForm } from "../../components/forms/SelectForm";
 import { startRegisterUser } from "../../redux/slices/authSlice/thunk";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { validateRegister } from "../../hook/validates/validations";
 
 export default function InfoContact() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({ resolver: yupResolver(validateRegister) });
   const { status, id } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -87,6 +89,7 @@ export default function InfoContact() {
               options={[
                 { value: "male", name: "Masculino" },
                 { value: "female", name: "Femenino" },
+                { value: "other", name: "Otro" },
               ]}
               register={register}
               errors={errors}

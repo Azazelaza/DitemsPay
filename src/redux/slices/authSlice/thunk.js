@@ -71,7 +71,7 @@ export const startRegisterUser = (data) => {
 
             Toast.fire({
                 icon: 'error',
-                title: 'Hubo un error al intentar registrarse'
+                title: 'Hubo un error al registrarse, puede que el correo que ingreso ya este en uso'
             })
         }
 

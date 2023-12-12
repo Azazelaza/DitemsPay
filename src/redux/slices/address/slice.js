@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialStatus = {
     states: [],
-    address: {},
+    address: JSON.parse(sessionStorage.getItem('address')) ?? {},
+    cfdi: [],
+    billing: {},
 }
 
 export const AddressSlice = createSlice({
@@ -14,9 +16,15 @@ export const AddressSlice = createSlice({
         },
         setAddress: (state, { payload }) => {
             state.address = payload
+        },
+        setCfdi: (state, { payload }) => {
+            state.cfdi = payload
+        },
+        setBilling: (state, { payload }) => {
+            state.billing = payload
         }
     }
 })
 
-export const { setStates, setAddress} = AddressSlice.actions;
+export const { setStates, setAddress, setCfdi, setBilling } = AddressSlice.actions;
 export default AddressSlice.reducer

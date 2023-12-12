@@ -22,8 +22,11 @@ export const authSlice = createSlice({
             state.phone = payload.phone
             state.email = payload.email
             state.address = payload.address
-            state.billing = payload.billing
+            state.billing = payload.billing ?? []
             state.checking = 0
+        },
+        setAddressUser: (state, { payload }) => {
+            state.address = payload
         },
         logout: (state, { payload }) => {
             state.status = 'not-auth'
@@ -41,5 +44,5 @@ export const authSlice = createSlice({
     }
 })
 
-export const { setLogin, logout, renew, register, endrenew } = authSlice.actions;
+export const { setLogin, logout, renew, register, endrenew, setAddressUser } = authSlice.actions;
 export default authSlice.reducer

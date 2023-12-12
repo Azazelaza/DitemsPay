@@ -72,7 +72,12 @@ export default function ContainCheckout({ children }) {
           </div>
           <div className={styles.products}>
             <h4>
-              Precio total: <span>${price * quantity}</span>
+              Precio de envio: <span>$150</span>
+            </h4>
+          </div>
+          <div className={styles.products}>
+            <h4>
+              Precio total: <span>${(parseFloat(price) + 150.00).toFixed(2)}</span>
             </h4>
           </div>
         </Col>

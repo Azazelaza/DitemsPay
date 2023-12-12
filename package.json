@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
-    "@mercadopago/sdk-react": "^0.0.12",
+    "@mercadopago/sdk-react": "^0.0.15",
     "@reduxjs/toolkit": "^1.9.3",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.3",
